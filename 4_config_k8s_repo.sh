@@ -13,6 +13,6 @@ yum install -y kubelet kubeadm kubectl --disableexcludes=kubernetes
 
 systemctl enable --now kubelet
 
-sed -i "s/--cgroup-driver=systemd/--cgroup-driver=cgroupfs/" 
+sed -i "s/--cgroup-driver=systemd/--cgroup-driver=cgroupfs/" /var/lib/kubelet/kubeadm-flags.env
 systemctl daemon-reload
 systemctl restart kubelet
